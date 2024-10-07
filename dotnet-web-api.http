@@ -1,6 +1,16 @@
-@dotnet_web_api_HostAddress = http://localhost:5181
 
-GET {{dotnet_web_api_HostAddress}}/weatherforecast/
-Accept: application/json
-
+GET http://localhost:5181
 ###
+
+
+POST  http://localhost:5181/hello
+###
+
+PUT  http://localhost:5181/hello
+###
+
+PATCH  http://localhost:5181/hello
+###
+
+
+DELETE  http://localhost:5181/hello

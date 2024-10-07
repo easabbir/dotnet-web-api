@@ -27,7 +27,7 @@ app.MapPut("/hello",()=>
 
 app.MapPatch("/hello",()=>
 {
-    return "Put method: Hello";
+    return "Patch method: Hello";
 });
 
 app.MapDelete("/hello",()=>
