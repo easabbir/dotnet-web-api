@@ -13,36 +13,53 @@ if(app.Environment.IsDevelopment()){
 app.UseHttpsRedirection();
 
 
-app.MapGet("/", () =>
-{
-    return "API is working fine";
-});
+app.MapGet("/", () => "API is working fine"
+);
 
 app.MapGet("/hello", () => 
 {
-    return "Hello World! this is my first api";
+    
+     var response = new { Message= "Success, this is a json object", 
+        Success= true };
+        return Results.Ok(response);  //200 
+   
+});
+
+var products = new List <Product>(){
+        new Product ("Samsung s24", 2000),
+        new Product ("Apple", 2500)
+};
+
+
+app.MapGet("/products",() =>{
+    return Results.Ok(products);
+
 });
 
 app.MapPost("/hello",()=>
 {
-    return "Post method: Hello";
+    return Results.Created(); //201
 });
 
 app.MapPut("/hello",()=>
 {
-    return "Put method: Hello";
+    return Results.NoContent(); //204
 });
 
 app.MapPatch("/hello",()=>
 {
-    return "Patch method: Hello";
+    return Results.NoContent(); //204
 });
 
 app.MapDelete("/hello",()=>
 {
-    return "Delete method: Hello";
+    return Results.NoContent(); //204
 });
 
-
-
 app.Run();
+
+
+public record Product
+(
+ String Name, Decimal Price
+);

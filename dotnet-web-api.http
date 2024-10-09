@@ -2,6 +2,8 @@
 GET http://localhost:5181
 ###
 
+GET http://localhost:5181/hello
+###
 
 POST  http://localhost:5181/hello
 ###
@@ -14,3 +16,6 @@ PATCH  http://localhost:5181/hello
 
 
 DELETE  http://localhost:5181/hello
+
+###
+GET http://localhost:5181/products
