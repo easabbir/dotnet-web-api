@@ -21,13 +21,25 @@ DELETE  http://localhost:5181/hello
 GET http://localhost:5181/products
 
 ###
-GET http://localhost:5181/api/categories
+GET http://localhost:5181/api/categories?searchValue=freeze
 
 ###
 POST http://localhost:5181/api/categories
+Content-Type: application/json
+
+{
+"name" : "freeze",
+"description": "This is the description of the freeze"
+}
 
 ###
-DELETE http://localhost:5181/api/categories
+DELETE http://localhost:5181/api/categories/baeb7177-b4f6-4c25-8162-0047eeac4b90
 
 ###
-PUT http://localhost:5181/api/categories
+PUT http://localhost:5181/api/categories/b7483250-1e9c-4d8e-b1e1-3ac2d84a31ce
+Content-Type: application/json
+
+{
+"name" : "Smartphoneddss",
+"description": "This is the description of the smartphone"
+}
